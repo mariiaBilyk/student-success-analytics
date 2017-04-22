@@ -3,8 +3,58 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Level 1- Domain", "Level 1- Domain", "{F15FF2C7-C1B6-4509-9AB7-6B250F9F8C9A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Level 2 - Infrastructure", "Level 2 - Infrastructure", "{337D422B-D2D8-48F9-8CD1-4FAD8CD2E937}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Level 3 - Application", "Level 3 - Application", "{2024E07F-C86D-4EB7-9562-EA587A8E808D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Level 4 - Presentation", "Level 4 - Presentation", "{5024B58F-7F6D-441C-B457-E1F8664A892D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentSuccessAnalytics.Domain.Models", "StudentSuccessAnalytics.Domain.Models\StudentSuccessAnalytics.Domain.Models.csproj", "{A3CE4196-5DAC-48FA-9526-384367653634}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentSuccessAnalytics.Infrastructure", "StudentSuccessAnalytics.Infrastructure\StudentSuccessAnalytics.Infrastructure.csproj", "{EC2DC066-504D-42C2-89CB-4797C45EECD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentSuccessAnalitycs.Infrastructure.Sql", "StudentSuccessAnalitycs.Infrastructure.Sql\StudentSuccessAnalitycs.Infrastructure.Sql.csproj", "{5D7823A6-9FEC-46BE-8E72-97446FC438CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentSuccess.WebAPI", "StudentSuccess.WebAPI\StudentSuccess.WebAPI.csproj", "{434E7CD7-671C-4180-BCB0-C2D9825825BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentSuccessAnalytics.Extentions", "StudentSuccessAnalytics.Extentions\StudentSuccessAnalytics.Extentions.csproj", "{B2BF8177-1043-4442-8071-4C6745DE814B}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3CE4196-5DAC-48FA-9526-384367653634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3CE4196-5DAC-48FA-9526-384367653634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3CE4196-5DAC-48FA-9526-384367653634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3CE4196-5DAC-48FA-9526-384367653634}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC2DC066-504D-42C2-89CB-4797C45EECD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC2DC066-504D-42C2-89CB-4797C45EECD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC2DC066-504D-42C2-89CB-4797C45EECD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC2DC066-504D-42C2-89CB-4797C45EECD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D7823A6-9FEC-46BE-8E72-97446FC438CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D7823A6-9FEC-46BE-8E72-97446FC438CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D7823A6-9FEC-46BE-8E72-97446FC438CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D7823A6-9FEC-46BE-8E72-97446FC438CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{434E7CD7-671C-4180-BCB0-C2D9825825BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{434E7CD7-671C-4180-BCB0-C2D9825825BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{434E7CD7-671C-4180-BCB0-C2D9825825BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{434E7CD7-671C-4180-BCB0-C2D9825825BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2BF8177-1043-4442-8071-4C6745DE814B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2BF8177-1043-4442-8071-4C6745DE814B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2BF8177-1043-4442-8071-4C6745DE814B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2BF8177-1043-4442-8071-4C6745DE814B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A3CE4196-5DAC-48FA-9526-384367653634} = {F15FF2C7-C1B6-4509-9AB7-6B250F9F8C9A}
+		{EC2DC066-504D-42C2-89CB-4797C45EECD1} = {337D422B-D2D8-48F9-8CD1-4FAD8CD2E937}
+		{5D7823A6-9FEC-46BE-8E72-97446FC438CE} = {337D422B-D2D8-48F9-8CD1-4FAD8CD2E937}
+		{434E7CD7-671C-4180-BCB0-C2D9825825BB} = {2024E07F-C86D-4EB7-9562-EA587A8E808D}
 	EndGlobalSection
 EndGlobal
