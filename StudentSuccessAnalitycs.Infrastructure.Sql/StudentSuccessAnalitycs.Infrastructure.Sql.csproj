@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,7 +47,10 @@
     <Compile Include="Generic\GenericRepository.cs" />
     <Compile Include="Generic\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\DepartmentRepository.cs" />
     <Compile Include="Repositories\GradeRepository.cs" />
+    <Compile Include="Repositories\InstituteRepository.cs" />
+    <Compile Include="Repositories\TeacherRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StudentSuccessAnalytics.Domain.Models\StudentSuccessAnalytics.Domain.Models.csproj">
@@ -54,6 +61,9 @@
       <Project>{ec2dc066-504d-42c2-89cb-4797c45eecd1}</Project>
       <Name>StudentSuccessAnalytics.Infrastructure</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

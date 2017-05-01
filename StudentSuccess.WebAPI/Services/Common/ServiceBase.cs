@@ -1,7 +1,11 @@
-﻿namespace StudentSuccess.WebAPI.Services.Common {
+﻿using StudentSuccessAnalytics.Infrastructure.Common;
+
+namespace StudentSuccess.WebAPI.Services.Common {
     public class ServiceBase {
-        public ServiceBase () {
-            
+        protected IUnitOfWork UnitOfWork;
+
+        public ServiceBase ( IUnitOfWork unitOfWork ) {
+            UnitOfWork = unitOfWork;
         }
     }
 }

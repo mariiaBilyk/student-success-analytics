@@ -3,7 +3,7 @@
 namespace StudentSuccessAnalitycs.Infrastructure.Sql.Repositories {
     public class GradeRepository : IGradeRepository {
         public string Id { get; }
-        public string SubjectName { get; }
+        public string SubjectId { get; }
         public string TypeControl { get; }
         public string EctsCredits { get; }
         public string Semester { get; }
@@ -11,7 +11,7 @@ namespace StudentSuccessAnalitycs.Infrastructure.Sql.Repositories {
         public string K { get; }
         public string RepeatStuding { get; }
         public string TeacherFullName { get; }
-        public string Department { get; }
+        public string DepartmentId { get; }
         public string StudentId { get; }
     }
 }

@@ -44,9 +44,16 @@
     <Compile Include="Common\IRepository.cs" />
     <Compile Include="Common\IUnitOfWork.cs" />
     <Compile Include="Names\Common\IRepositoryTableName.cs" />
+    <Compile Include="Repositories\IDepartmentRepository.cs" />
+    <Compile Include="Names\IDepartmentRepositoryName.cs" />
     <Compile Include="Names\IGradeRepositoryNames.cs" />
+    <Compile Include="Names\IInstituteRepositoryNames.cs" />
+    <Compile Include="Names\ISubjectRepositoryNames.cs" />
+    <Compile Include="Names\ITeacherRepositoryNames.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IGradeRepository.cs" />
+    <Compile Include="Repositories\IInstituteRepository.cs" />
+    <Compile Include="Repositories\ITeacherRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StudentSuccessAnalytics.Domain.Models\StudentSuccessAnalytics.Domain.Models.csproj">

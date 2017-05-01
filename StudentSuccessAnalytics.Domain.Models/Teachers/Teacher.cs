@@ -2,6 +2,7 @@
 
 namespace StudentSuccessAnalytics.Domain.Models.Teachers {
     public class Teacher : BaseEntity {
-        public string FullName { get; set; }    
+        public string FullName { get; set; }
+        public int DepartmentId { get; set; }      
     }
 }
