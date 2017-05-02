@@ -1,4 +1,6 @@
-﻿namespace StudentSuccessAnalytics.Infrastructure.Names {
+﻿using System;
+
+namespace StudentSuccessAnalytics.Infrastructure.Names {
     public interface IGradeRepositoryNames {
         string Id { get; }
         string SubjectId { get; }
@@ -8,5 +10,6 @@
         string RepeatStuding { get; }
         string DepartmentId { get; }
         string StudentId { get; }
+        string AssessmentDate { get; }
     }
 }

@@ -44,5 +44,6 @@ namespace StudentSuccessAnalitycs.Infrastructure.Sql.Repositories {
         public string DepartmentId => "[departmentId]";
         public string StudentId => "[studentId]";
         public string Id => "[id]";
+        public string AssessmentDate => "[assessmentDate]";
     }
 }
