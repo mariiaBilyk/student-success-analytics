@@ -10,6 +10,9 @@ namespace StudentSuccessAnalitycs.Infrastructure.Sql.Repositories {
         public IEnumerable<Institute> GetAll ( ) {
             return base.GetAll( TableName );
         }
+        public Institute GetById ( int id ) {
+            return GetById( TableName, Id, id );
+        }
 
         public string Id => "[id]";
         public string Name => "[name]";

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Description;
 using StudentSuccess.WebAPI.Controllers.Common;
@@ -8,11 +7,11 @@ using StudentSuccess.WebAPI.Services;
 using StudentSuccessAnalytics.Infrastructure.Common;
 
 namespace StudentSuccess.WebAPI.Controllers {
-    [RoutePrefix("api/institute")]
+    [RoutePrefix ( "api/institute" )]
     public class InstitutesController : BaseController {
         private readonly UniversityModulesService _universityModulesService;
 
-        public InstitutesController ( IUnitOfWork unitOfWork) {
+        public InstitutesController ( IUnitOfWork unitOfWork ) {
             _universityModulesService = new UniversityModulesService( unitOfWork );
         }
 
@@ -20,7 +19,8 @@ namespace StudentSuccess.WebAPI.Controllers {
         [ResponseType ( typeof( IEnumerable<InstituteBindModel> ) )]
         public IHttpActionResult Get () {
             var institutes = _universityModulesService.GetInstitutes();
-            return Ok( institutes );
+
+            return institutes != null ? ( IHttpActionResult ) Ok( institutes ) : NotFound();
         }
     }
 }

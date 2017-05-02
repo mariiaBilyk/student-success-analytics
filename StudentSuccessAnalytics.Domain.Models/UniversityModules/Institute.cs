@@ -2,7 +2,7 @@
 
 namespace StudentSuccessAnalytics.Domain.Models.UniversityModules {
     public class Institute : BaseEntity {
-        public string ShortTitle { get; set; }
-        public string Title { get; set; }   
+        public string ShortName { get; set; }
+        public string Name { get; set; }   
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
@@ -8,7 +9,8 @@ using StudentSuccessAnalytics.Infrastructure.Common;
 
 namespace StudentSuccessAnalitycs.Infrastructure.Sql.Generic {
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity: class {
-        protected virtual string ConnectionString => string.Empty;
+        protected virtual string ConnectionString 
+            => ConfigurationManager.ConnectionStrings["StudentSuccessConString"].ConnectionString;
 
         public virtual string TableName => string.Empty;
 
@@ -31,11 +33,12 @@ namespace StudentSuccessAnalitycs.Infrastructure.Sql.Generic {
             }
         }
 
-        public string GradeViewName => string.Empty;
+        public string GradeViewName => "[dbo].[Success]";
         public string StudentsViewName => string.Empty;
         public string InstituteTableName => "[dbo].[Institute]";
         public string DepartmentTableName => "[dbo].[Department]";
         public string TeacherTableName => "[dbo].[Teacher]";
+        public string SubjectTableName => "[dbo].[Subject]";
 
         protected SqlConnection OpenConnection () {
             var connection = new SqlConnection(ConnectionString);

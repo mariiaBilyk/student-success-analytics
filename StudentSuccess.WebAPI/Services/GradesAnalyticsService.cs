@@ -1,9 +1,13 @@
 ﻿using System.Collections.Generic;
 using StudentSuccess.WebAPI.Models.GradesChart;
 using StudentSuccess.WebAPI.Services.Common;
+using StudentSuccessAnalytics.Infrastructure.Common;
 
 namespace StudentSuccess.WebAPI.Services {
     public class GradesAnalyticsService : ServiceBase {
+        public GradesAnalyticsService ( IUnitOfWork unitOfWork ) : base( unitOfWork ) {
+        }
+
         public GradesChartBindingModel GetGradesChart ( GradesChartFiltersBindingModel filtering ) {
             return new GradesChartBindingModel {
                 ChartItems = new List<GradeChartItem>() {

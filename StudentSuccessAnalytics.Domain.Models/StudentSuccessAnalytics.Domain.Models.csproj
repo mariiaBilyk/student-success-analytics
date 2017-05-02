@@ -43,6 +43,8 @@
     <Compile Include="Common\BaseEntity.cs" />
     <Compile Include="Enums\ControlTypes.cs" />
     <Compile Include="Enums\ErasmusGrades.cs" />
+    <Compile Include="Enums\StudyForms.cs" />
+    <Compile Include="Grades\GradeChartItem.cs" />
     <Compile Include="Grades\Grade.cs" />
     <Compile Include="Grades\Subject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

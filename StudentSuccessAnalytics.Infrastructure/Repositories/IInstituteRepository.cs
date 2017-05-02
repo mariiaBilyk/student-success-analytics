@@ -7,5 +7,6 @@ using StudentSuccessAnalytics.Infrastructure.Names;
 namespace StudentSuccessAnalytics.Infrastructure.Repositories {
     public interface IInstituteRepository : IGenericRepository<Institute>, IInstituteRepositoryNames {
         IEnumerable<Institute> GetAll ();
+        Institute GetById ( int id );
     }
 }
