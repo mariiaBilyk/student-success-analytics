@@ -2,6 +2,7 @@
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 using Unity.WebApi;
+using System.Web.Http.Cors;
 
 namespace StudentSuccess.WebAPI
 {
@@ -16,6 +17,8 @@ namespace StudentSuccess.WebAPI
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+
+            config.EnableCors();
 
             config.DependencyResolver = new UnityDependencyResolver(UnityConfiguration.GetConfiguredContainer());
 

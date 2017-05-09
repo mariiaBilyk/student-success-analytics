@@ -1,0 +1,23 @@
+<div class="container">
+	<nav>
+		<ul>
+			<li><a [routerLink]="['/dashboard']" href="">dashboard</a></li>
+			<li><a [routerLink]="['/grades']" href="">grades</a></li>
+			<li><a [routerLink]="['/budget']" href="">budget</a></li>
+			<li><a [routerLink]="['/student_sucess']" href="">student sucess</a></li>
+			<li><a [routerLink]="['/semester_grades']" href="">semester grades</a></li>
+		</ul>
+	</nav>
+	<div class='main_contant'>
+		<header class="col-md-8">
+		<md-toolbar color="primary">
+		    <span>Page Name</span>
+		</md-toolbar>
+		</header>
+		<main>
+			<section>
+				<router-outlet></router-outlet>	
+			</section>
+		</main>
+	</div>
+</div>

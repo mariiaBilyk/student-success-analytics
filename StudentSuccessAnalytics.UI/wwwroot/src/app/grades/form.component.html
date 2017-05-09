@@ -1,0 +1,14 @@
+<div class="main-wrapper">
+      <md-select placeholder="Select Department" [(ngModel)]="department" name="Select department" class="ui fluid search selection dropdown"> 
+        <md-option *ngFor="let dep of departments" [value]="dep">{{dep}}</md-option>
+      </md-select>
+      <md-select placeholder="Select Teacher" [(ngModel)]="teacher" name="Select teacher" class="ui fluid search selection dropdown">
+        <md-option [value]="0">any</md-option> 
+        <md-option *ngFor="let teach of teachers" [value]="teach.id">{{teach.name}}</md-option>
+      </md-select>
+      <md-select placeholder="Select Subject" [(ngModel)]="subject" name="Select subject" [disabled]="teacher==0 || teacher == undefiened" class="ui fluid search selection dropdown"> 
+      	<md-option [value]="0">any</md-option> 
+        <md-option *ngFor="let sub of subjects" [value]="sub">{{sub}}</md-option>
+      </md-select>
+      <button md-raised-button color="primary" (click)="alert()" >Show</button>
+</div>

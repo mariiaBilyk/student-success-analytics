@@ -1,0 +1,18 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+}
+body {
+	margin: 0 !important;
+    position: relative; /* 1. Position relative because of absolute child elements */
+    padding: 60px 0 0 0; /* 2. Using padding to define strech-able space */
+    box-sizing: border-box; /* 3. Box sizing to subtract padding and border from the 100% height of this element when child elements define 100% height */
+}
+.logo{
+	background-color: gray;
+	position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 60px;
+}
