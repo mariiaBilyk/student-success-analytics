@@ -8,7 +8,8 @@
 
 ul li {
     display: block;
-    height: 64px;    
+    padding: 0px;
+    /*height: 64px;    */
     line-height: 12px;
     text-align: center;
     font-family: Roboto, 'Regular';
@@ -19,20 +20,22 @@ ul li span {
     display: inline-block;  
     vertical-align: middle;     
 }
-
+/*
 ul li:before{
     content: '';
     display: inline-block;
     vertical-align: middle;
     height: 100%;       
 }
- 
+ */
 nav ul li a:visited {
     color: white;
 }
 
 nav ul li a{
     text-decoration: none; 
+    display: block;
+    padding:26px 10px 26px 10px;
 }
 
 nav ul li:hover {

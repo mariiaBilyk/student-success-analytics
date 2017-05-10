@@ -6,13 +6,13 @@ import { GradesChartItem } from '../common/models/grades-chart-item';
  
 @Component({
   moduleId: module.id,
-  selector: 'chart',
+  selector: 'student-sucess-chart',
 
-  templateUrl: './chart.component.html',
+  templateUrl: './student-sucess-chart.component.html',
 
-  styleUrls: ['./chart.component.css']
+  styleUrls: ['./student-sucess.component.css']
 })
-export class ChartComponent implements OnInit {
+export class StudentSucessChartComponent implements OnInit {
 
   constructor ( private _gradesService: GradesService ) {};
 
@@ -54,7 +54,7 @@ export class ChartComponent implements OnInit {
 
   private getChartData(){
    this.col_ChartData = (this._gradesService.getGrades().chartData.map(x => [x.grade, x.count]));
-   this.col_ChartData.unshift(['Grade', 'Count']);
+   this.col_ChartData.unshift(['Оцінка', 'Кількість']);
    
   }
   //   this.barChartLabels = this.GradesChartData.chartData.map( x => x.grade );

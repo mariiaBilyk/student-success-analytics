@@ -1,5 +1,5 @@
 
 <div>
-  <grades-filters-form></grades-filters-form>
-  <chart [hidden]="chartShown"></chart>
+  <grades-filters-form (show)="showChartClicked = $event">></grades-filters-form>
+  <chart [(showMe)]="showChartClicked"></chart>
 </div>

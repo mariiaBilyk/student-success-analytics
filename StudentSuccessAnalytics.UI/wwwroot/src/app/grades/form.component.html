@@ -1,14 +1,19 @@
 <div class="main-wrapper">
-      <md-select placeholder="Select Department" [(ngModel)]="department" name="Select department" class="ui fluid search selection dropdown"> 
-        <md-option *ngFor="let dep of departments" [value]="dep">{{dep}}</md-option>
+      <md-select placeholder="Кафедра" [(ngModel)]="department" name="Select department" 
+      (ngModelChange)="getTeachers()" class="ui fluid search selection dropdown"> 
+        <md-option *ngFor="let dep of departments" [value]="dep.id">{{dep.name}}</md-option>
       </md-select>
-      <md-select placeholder="Select Teacher" [(ngModel)]="teacher" name="Select teacher" class="ui fluid search selection dropdown">
+
+      <md-select placeholder="Викладач" [(ngModel)]="teacher" name="Select teacher" 
+      (ngModelChange)="getSubjects()" class="ui fluid search selection dropdown">
         <md-option [value]="0">any</md-option> 
         <md-option *ngFor="let teach of teachers" [value]="teach.id">{{teach.name}}</md-option>
       </md-select>
-      <md-select placeholder="Select Subject" [(ngModel)]="subject" name="Select subject" [disabled]="teacher==0 || teacher == undefiened" class="ui fluid search selection dropdown"> 
+
+      <md-select placeholder="Дисципліна" [(ngModel)]="subject" name="Select subject" [disabled]="teacher==0 || teacher == undefiened" class="ui fluid search selection dropdown"> 
       	<md-option [value]="0">any</md-option> 
-        <md-option *ngFor="let sub of subjects" [value]="sub">{{sub}}</md-option>
+        <md-option *ngFor="let sub of subjects" [value]="sub.id">{{sub.name}}</md-option>
       </md-select>
-      <button md-raised-button color="primary" (click)="alert()" >Show</button>
+
+      <button md-raised-button color="primary" (click)="showChart()" >Show</button>
 </div>

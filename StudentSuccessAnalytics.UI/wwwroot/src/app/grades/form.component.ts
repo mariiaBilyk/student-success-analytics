@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { IdAndName } from '../common/models/id-and-name';
-import { TeacherService } from '../common/services/teachers.service';
-import { DepartmentsService } from '../common/services/departments.service';
+import { UniversityModulesService } from '../common/services/university-modules.service';
 
 @Component({
     moduleId: module.id,
     selector: 'grades-filters-form',
     templateUrl: 'form.component.html',
     styleUrls: ['form.component.css'],
-    providers: [TeacherService]
+    providers: [UniversityModulesService]
 })
 
 export class FormComponent implements OnInit {
@@ -18,23 +17,47 @@ export class FormComponent implements OnInit {
     teacher: number;
     teachers: IdAndName[];
 
-    subject: string;
-    subjects: string[] = ["John", "Paul", "George", "Ringo"];
+    subject: number;
+    subjects: IdAndName[];
 
-    constructor( private _teacherService: TeacherService, private _departmentsService: DepartmentsService ) {}
+    constructor( private _universityModulesService: UniversityModulesService ) {}
 
     getTeachers(){
-        this._teacherService.getTeachers().then((teachers: IdAndName[] ) => this.teachers = teachers);
+        if (this.department > 0 )
+            this._universityModulesService.getTeachers(this.department).then((teachers: IdAndName[] ) => 
+                this.teachers = teachers);
+        else { 
+            this.teachers = [];
+            this.teacher = 0;
+        }
     }
 
     getDepartments() {
-        this._departmentsService.getDepartments().then((departments: IdAndName[]) => this.departments = departments);
-        this.department = this.departments[0].id;
+        this._universityModulesService.getDepartments().then((departments: IdAndName[]) => {
+            this.departments = departments;
+            this.department = this.departments[0].id;
+
+            this.getTeachers();
+        });
     }
+
+    getSubjects(){
+        if (this.teacher > 0)
+            this._universityModulesService.getSubjects(this.teacher).then((subjects: IdAndName[]) => 
+                this.subjects = subjects)
+        else { 
+            this.subjects = [];
+            this.subject = 0;
+        }
+    }
+
+    @Output() show = new EventEmitter<boolean>();
 
     ngOnInit() {
         this.getDepartments();
     }
 
-    alert() { console.log(this.department); }
+    showChart() { 
+        this.show.emit(true);
+    }
 }

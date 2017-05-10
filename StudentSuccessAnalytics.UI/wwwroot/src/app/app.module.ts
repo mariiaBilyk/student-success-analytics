@@ -8,10 +8,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule, routableComponents } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BudgetComponent } from './budget/budget.component';
+import { StudentSucessChartComponent } from './student-sucess/student-sucess-chart.component';
 import { StudentSucessComponent } from './student-sucess/student-sucess.component';
+import { SemesterSucessFormComponent } from './student-sucess/student-sucess-form.component';
 import { SemesterGradesComponent } from './semester-grades/semester-grades.component';
+import { SemesterGradesFormComponent } from './semester-grades/semester-grades-form.component';
+import { SemesterGradesChartComponent } from './semester-grades/semester-grades-chart.component';
 import { GradesService } from './common/services/grades.service';
-import { DepartmentsService } from './common/services/departments.service';
+import { UniversityModulesService } from './common/services/university-modules.service';
 import { GradesComponent } from './grades/grades.component';
 import { FormComponent } from './grades/form.component';
 import { ChartComponent } from './grades/chart.component';
@@ -19,6 +23,7 @@ import { ChartComponent } from './grades/chart.component';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';  
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {GoogleChart} from 'angular2-google-chart/directives/angular2-google-chart.directive';
 
 
 
@@ -32,8 +37,13 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     ChartComponent,
     BudgetComponent,
     StudentSucessComponent,
+    StudentSucessChartComponent,
+    SemesterSucessFormComponent,
     SemesterGradesComponent,
-    FormComponent
+    SemesterGradesFormComponent,
+    SemesterGradesChartComponent,
+    FormComponent,
+    GoogleChart
   ],
   imports: [
     BrowserModule,
@@ -43,10 +53,9 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
-    // MdButtonModule,
     MaterialModule.forRoot()
   ],
-  providers: [GradesService, DepartmentsService],
+  providers: [GradesService, UniversityModulesService],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
