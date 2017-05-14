@@ -266,6 +266,7 @@
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\GradesChartController.cs" />
     <Compile Include="Controllers\InstitutesController.cs" />
+    <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -277,6 +278,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\UniversityModules\DepartmentBindModel.cs" />
     <Compile Include="Models\UniversityModules\InstituteBindModel.cs" />
+    <Compile Include="Models\UniversityModules\SubjectBindModel.cs" />
     <Compile Include="Models\UniversityModules\TeacherInfoBindModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />

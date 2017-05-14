@@ -17,10 +17,8 @@ namespace StudentSuccess.WebAPI.Controllers {
 
         [HttpGet]
         [ResponseType ( typeof( IEnumerable<DepartmentBindModel> ) )]
-        public IHttpActionResult GetDepartments ( int instituteId ) {
-            if ( instituteId <= 0 ) return BadRequest( "The institute is is not in the valid format!" );
-
-            var departments = _universityModulesService.GetInstituteDepartments( instituteId );
+        public IHttpActionResult GetDepartments () {
+            var departments = _universityModulesService.GetDepartments();
 
             return departments != null ? ( IHttpActionResult ) Ok( departments ) : NotFound();
         }
