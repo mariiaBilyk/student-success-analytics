@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule, routableComponents } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BudgetComponent } from './budget/budget.component';
+import { BudgetChartComponent } from './budget/budget-chart.component';
+import { BudgetFormComponent } from './budget/budget-form.component';
 import { StudentSucessChartComponent } from './student-sucess/student-sucess-chart.component';
 import { StudentSucessComponent } from './student-sucess/student-sucess.component';
 import { SemesterSucessFormComponent } from './student-sucess/student-sucess-form.component';
@@ -36,6 +38,8 @@ import {GoogleChart} from 'angular2-google-chart/directives/angular2-google-char
     GradesComponent,
     ChartComponent,
     BudgetComponent,
+    BudgetFormComponent,
+    BudgetChartComponent,
     StudentSucessComponent,
     StudentSucessChartComponent,
     SemesterSucessFormComponent,

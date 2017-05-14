@@ -1,0 +1,12 @@
+<div class="main-wrapper">
+      <md-select placeholder="Інститут" [(ngModel)]="institute" name="Select institute" 
+      (ngModelChange)="getSpecializations()" class="ui fluid search selection dropdown"> 
+        <md-option *ngFor="let inst of institutes" [value]="inst.id">{{inst.name}}</md-option>
+      </md-select>
+
+      <md-select placeholder="Спеціальність" [(ngModel)]="specialization" name="Select specialization"class="ui fluid search selection dropdown">
+        <md-option *ngFor="let spec of specializations" [value]="spec.id">{{spec.name}}</md-option>
+      </md-select>
+
+      <button md-raised-button color="primary" (click)="showChart()" >Show</button>
+</div>

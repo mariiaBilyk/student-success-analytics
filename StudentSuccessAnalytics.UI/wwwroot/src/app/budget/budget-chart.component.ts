@@ -6,24 +6,28 @@ import { GradesChartItem } from '../common/models/grades-chart-item';
  
 @Component({
   moduleId: module.id,
-  selector: 'chart',
+  selector: 'budget-chart',
 
-  templateUrl: './chart.component.html',
+  templateUrl: './budget-chart.component.html',
 
-  styleUrls: ['./chart.component.css']
+  styleUrls: ['./budget.component.css']
 })
-export class ChartComponent implements OnInit {
+export class BudgetChartComponent implements OnInit {
 
   constructor ( private _gradesService: GradesService ) {};
 
   @Input() showMe: boolean = false;
 
 //  public col_ChartData = [];
-    public col_ChartData: any = [];
+    public col_ChartData = [
+        ['', 'Кількість'],
+        ['Повторне вивчення', 30],
+        ['Стипендія', 150],
+        ['Підвищена стипендія', 16],
+    ]
   public col_ChartOptions = {
         chartArea: { width: '50%' },
         vAxis: {
-            title: 'Кількість',
             minValue: 0,
             textStyle: {
                 bold: true,
@@ -37,7 +41,6 @@ export class ChartComponent implements OnInit {
             }
         },
         hAxis: {
-            title: 'Оцінки',
             textStyle: {
                 fontSize: 14,
                 bold: true,
@@ -52,11 +55,11 @@ export class ChartComponent implements OnInit {
         seriesType: 'bars'
     };
 
-  private getChartData(){
-   this.col_ChartData = (this._gradesService.getGrades().chartData.map(x => [x.grade, x.count]));
-   this.col_ChartData.unshift(['Оцінка', 'Кількість']);
+  // private getChartData(){
+  //  this.col_ChartData = (this._gradesService.getGrades().chartData.map(x => [x.grade, x.count]));
+  //  this.col_ChartData.unshift(['Оцінка', 'Кількість']);
    
-  }
+  // }
   //   this.barChartLabels = this.GradesChartData.chartData.map( x => x.grade );
   //   this.barChartData.push(
   //     {
@@ -64,5 +67,5 @@ export class ChartComponent implements OnInit {
   //       label: "Grades"
   //     });
   // }
-  ngOnInit() {this.getChartData();}
+  ngOnInit() {}
 }

@@ -44,6 +44,12 @@ nav ul li:hover {
     background-color: #5FD367;
 }
 
+nav ul li.active {
+    cursor: pointer;
+    color: white;
+    background-color: #5FD330;
+}
+
 nav ul {
     width: 200px;
     padding: 0;
