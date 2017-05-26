@@ -6,5 +6,6 @@ using StudentSuccessAnalytics.Infrastructure.Names;
 namespace StudentSuccessAnalytics.Infrastructure.Repositories {
     public interface IDepartmentRepository : IGenericRepository<Department>, IDepartmentRepositoryName {
         IEnumerable<Department> GetByInstituteId ( int instituteId );
+        IEnumerable<Department> GetAll ();
     }
 }

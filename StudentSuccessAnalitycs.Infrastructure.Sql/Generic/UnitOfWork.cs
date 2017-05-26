@@ -9,6 +9,7 @@ namespace StudentSuccessAnalitycs.Infrastructure.Sql.Generic {
         private IInstituteRepository _instituteRepository;
         private IDepartmentRepository _departmentRepository;
         private ITeacherRepository _teacherRepository;
+        private ISubjectRepository _subjectRepository;
 
         public IGradeRepository GradeRepository
             => _gradeRepository ?? (_gradeRepository = new GradeRepository());
@@ -22,9 +23,11 @@ namespace StudentSuccessAnalitycs.Infrastructure.Sql.Generic {
         public ITeacherRepository TeacherRepository
             => _teacherRepository ?? (_teacherRepository = new TeacherRepository());
 
+        public ISubjectRepository SubjectRepository
+            => _subjectRepository ?? (_subjectRepository = new SubjectRepository());
+
         public void Dispose () {
             GC.SuppressFinalize(this);
         }
-
     }
 }

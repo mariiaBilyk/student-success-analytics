@@ -51,6 +51,7 @@
     <Compile Include="Repositories\DepartmentRepository.cs" />
     <Compile Include="Repositories\GradeRepository.cs" />
     <Compile Include="Repositories\InstituteRepository.cs" />
+    <Compile Include="Repositories\SubjectRepository.cs" />
     <Compile Include="Repositories\TeacherRepository.cs" />
   </ItemGroup>
   <ItemGroup>

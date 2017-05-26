@@ -20,5 +20,9 @@ namespace StudentSuccessAnalitycs.Infrastructure.Sql.Repositories {
                 return departments;
             }
         }
+
+        public IEnumerable<Department> GetAll () {
+            return base.GetAll( TableName );
+        }
     }
 }

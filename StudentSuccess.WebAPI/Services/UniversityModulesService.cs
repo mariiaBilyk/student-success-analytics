@@ -11,6 +11,7 @@ namespace StudentSuccess.WebAPI.Services {
         private IInstituteRepository InstituteRepository => UnitOfWork.InstituteRepository;
         private IDepartmentRepository DepartmentRepository => UnitOfWork.DepartmentRepository;
         private ITeacherRepository TeacherRepository => UnitOfWork.TeacherRepository;
+        private ISubjectRepository SubjectRepository => UnitOfWork.SubjectRepository;
 
         public UniversityModulesService ( IUnitOfWork unitOfWork ) : base( unitOfWork ) {
         }
@@ -35,6 +36,16 @@ namespace StudentSuccess.WebAPI.Services {
             return departments;
         }
 
+        public IEnumerable<DepartmentBindModel> GetDepartments () {
+            var departmentsDb = DepartmentRepository.GetAll();
+            var departments = departmentsDb.Select(d => new DepartmentBindModel {
+                Id = d.Id,
+                Name = d.Name
+            });
+
+            return departments;
+        }
+
         public IEnumerable<TeacherInfoBindModel> GetDepartmentTeachers ( int departmentId ) {
             var teachersdb = TeacherRepository.GetByDepartmentId( departmentId );
             var teachers = teachersdb.Select( t => new TeacherInfoBindModel {
@@ -43,6 +54,16 @@ namespace StudentSuccess.WebAPI.Services {
             } );
 
             return teachers;
+        }
+
+        public IEnumerable<SubjectBindModel> GetTeacherSubjects ( int teacherId ) {
+            var subjectsDb = SubjectRepository.GetSubjectsByTeacherId( teacherId );
+            var subjects = subjectsDb.Select( s => new SubjectBindModel {
+                Id = s.Id,
+                Title = s.Name
+            } );
+
+            return subjects;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using StudentSuccessAnalytics.Infrastructure.Names;
 using StudentSuccessAnalytics.Infrastructure.Repositories;
 
 namespace StudentSuccessAnalytics.Infrastructure.Common {
@@ -7,5 +8,6 @@ namespace StudentSuccessAnalytics.Infrastructure.Common {
         IInstituteRepository InstituteRepository { get; }
         IDepartmentRepository DepartmentRepository { get; }
         ITeacherRepository TeacherRepository { get; }
+        ISubjectRepository SubjectRepository { get; }
     }
 }
