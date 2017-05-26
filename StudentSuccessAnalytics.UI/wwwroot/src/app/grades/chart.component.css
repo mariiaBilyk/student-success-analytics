@@ -1,0 +1,15 @@
+#control_div{
+	margin-top: 20px;
+	width:49%;
+	float: left;
+	height: 50px;
+}
+#filter_div{
+	margin-top: 20px;
+	width:49%;
+	float: left;
+	height: 50px;
+}
+.google-visualization-controls-categoryfilter{
+	height: 33px !important;	
+}
