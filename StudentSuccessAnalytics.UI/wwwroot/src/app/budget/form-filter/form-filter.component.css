@@ -1,0 +1,29 @@
+.left-box{
+	width: 40%;
+	float: left;
+	background-color: 'grey'; 
+}
+.right-box{
+	width: 40%;
+	float:left;
+}
+.mat-input-container{
+	width: 150px;
+}
+p{
+	font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+.wrapper>p{
+    border-bottom: 1px solid gray;
+    width: 68%;
+    border-width: 80%;
+    padding-bottom: 18px;
+    margin-bottom: 0px;
+}
+.wrapper{
+	    margin-left: 15px;
+    margin-top: 15px;
+    background-color: rgba(85, 0, 128, 0.1);
+    width: 70%;
+    padding: 15px;
+}

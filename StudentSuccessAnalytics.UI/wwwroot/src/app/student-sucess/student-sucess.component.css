@@ -5,3 +5,7 @@
 .selection{
 	margin-right: 30px;
 }
+#filter_div, #control_div{
+	margin-left: 15px; 
+	margin-top: 15px;
+}

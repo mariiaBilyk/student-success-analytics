@@ -1,2 +1,21 @@
-<student-sucess-filters-form (show)="showChartClicked = $event"></student-sucess-filters-form>
-<student-sucess-chart [(showMe)]="showChartClicked"></student-sucess-chart>
+<md-toolbar color="primary">
+		    <span>Успішність студентів</span>
+		</md-toolbar>
+<div class="main-wrapper">
+      <md-select placeholder="Інститут" [(ngModel)]="institute" name="Select institute" 
+      (ngModelChange)="getSpecializations()" class="ui fluid search selection dropdown"> 
+        <md-option *ngFor="let inst of institutes" [value]="inst.id">{{inst.name}}</md-option>
+      </md-select>
+
+      <md-select placeholder="Спеціальність" [(ngModel)]="specialization" name="Select specialization"
+      (ngModelChange)="getStreams()" class="ui fluid search selection dropdown">
+        <md-option *ngFor="let spec of specializations" [value]="spec.id">{{spec.name}}</md-option>
+      </md-select>
+
+      <md-select placeholder="Потік" [(ngModel)]="stream" name="Select stream" [disabled]="specialization == undefiened" class="ui fluid search selection dropdown"> 
+        <md-option *ngFor="let s of streams" [value]="s.id">{{s.name}}</md-option>
+      </md-select>
+
+      <button md-raised-button color="primary" (click)="showChart()" >Show</button>
+</div>
+<student-sucess-chart [showMe]="show" [col_ChartData]="data"></student-sucess-chart>

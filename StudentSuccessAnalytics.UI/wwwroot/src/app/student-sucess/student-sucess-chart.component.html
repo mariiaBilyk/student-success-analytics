@@ -1,1 +1,5 @@
-   <div *ngIf="showMe" id="column_chart" [chartData]="col_ChartData" [chartOptions] = "col_ChartOptions" chartType="ColumnChart" GoogleChart></div>
+<div [hidden]="!showMe">
+  <div id="control_div"></div>
+  <div id="filter_div"></div>
+  <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+</div>

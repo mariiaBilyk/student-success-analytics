@@ -12,7 +12,6 @@ import { BudgetChartComponent } from './budget/budget-chart.component';
 import { BudgetFormComponent } from './budget/budget-form.component';
 import { StudentSucessChartComponent } from './student-sucess/student-sucess-chart.component';
 import { StudentSucessComponent } from './student-sucess/student-sucess.component';
-import { SemesterSucessFormComponent } from './student-sucess/student-sucess-form.component';
 import { SemesterGradesComponent } from './semester-grades/semester-grades.component';
 import { SemesterGradesFormComponent } from './semester-grades/semester-grades-form.component';
 import { SemesterGradesChartComponent } from './semester-grades/semester-grades-chart.component';
@@ -26,6 +25,7 @@ import { MaterialModule } from '@angular/material';
 import 'hammerjs';  
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {GoogleChart} from 'angular2-google-chart/directives/angular2-google-chart.directive';
+import { FormFilterComponent } from './budget/form-filter/form-filter.component';
 
 
 
@@ -42,12 +42,12 @@ import {GoogleChart} from 'angular2-google-chart/directives/angular2-google-char
     BudgetChartComponent,
     StudentSucessComponent,
     StudentSucessChartComponent,
-    SemesterSucessFormComponent,
     SemesterGradesComponent,
     SemesterGradesFormComponent,
     SemesterGradesChartComponent,
     FormComponent,
-    GoogleChart
+    GoogleChart,
+    FormFilterComponent
   ],
   imports: [
     BrowserModule,

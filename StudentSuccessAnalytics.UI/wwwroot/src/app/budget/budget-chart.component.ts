@@ -12,19 +12,40 @@ import { GradesChartItem } from '../common/models/grades-chart-item';
 
   styleUrls: ['./budget.component.css']
 })
-export class BudgetChartComponent implements OnInit {
+export class BudgetChartComponent implements OnInit{
 
   constructor ( private _gradesService: GradesService ) {};
 
   @Input() showMe: boolean = false;
+  @Input() data: any;
 
-//  public col_ChartData = [];
-    public col_ChartData = [
+  col_ChartDatas = [
+  [
         ['', 'Кількість'],
         ['Повторне вивчення', 30],
         ['Стипендія', 150],
         ['Підвищена стипендія', 16],
-    ]
+  ],
+  [
+        ['', 'Кількість'],
+        ['Повторне вивчення', 30],
+        ['Стипендія', 10],
+        ['Підвищена стипендія', 18],
+  ],
+  [
+        ['', 'Кількість'],
+        ['Повторне вивчення', 30],
+        ['Стипендія', 16],
+        ['Підвищена стипендія', 177],
+  ],
+  [
+        ['', 'Кількість'],
+        ['Повторне вивчення', 30],
+        ['Стипендія', 60],
+        ['Підвищена стипендія', 9],
+  ]];
+  
+  col_ChartData = this.col_ChartDatas[0];
   public col_ChartOptions = {
         chartArea: { width: '50%' },
         vAxis: {
@@ -52,6 +73,7 @@ export class BudgetChartComponent implements OnInit {
                 color: '#848484'
             }
         },
+         colors: ['green', '#e6693e', 'pink'],
         seriesType: 'bars'
     };
 
@@ -67,5 +89,12 @@ export class BudgetChartComponent implements OnInit {
   //       label: "Grades"
   //     });
   // }
-  ngOnInit() {}
+  ngOnInit() {
+    this.data = [
+        ['', 'Кількість'],
+        ['Повторне вивчення', 30],
+        ['Стипендія', 150],
+        ['Підвищена стипендія', 16],
+  ];
+  }
 }

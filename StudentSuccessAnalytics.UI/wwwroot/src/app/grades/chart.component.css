@@ -3,6 +3,7 @@
 	width:49%;
 	float: left;
 	height: 50px;
+	padding-left: 15px; 
 }
 #filter_div{
 	margin-top: 20px;

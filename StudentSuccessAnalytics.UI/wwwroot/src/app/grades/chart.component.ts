@@ -27,7 +27,7 @@ export class ChartComponent implements OnInit {
             textStyle: {
                 bold: true,
                 fontSize: 12,
-                color: '#4d4d4d'
+                color: 'red'
             },
             titleTextStyle: {
                 bold: true,
@@ -50,10 +50,7 @@ export class ChartComponent implements OnInit {
         },
         seriesType: 'bars'
       };
-      //var view = new google.visualization.DataView(groupData);
 
-      // var dashboard = new google.visualization.Dashboard(
-      //     document.getElementById('dashboard_div'));
       var control = new google.visualization.ControlWrapper({
         controlType: 'CategoryFilter',
         containerId: 'control_div',
@@ -61,8 +58,9 @@ export class ChartComponent implements OnInit {
         options: {
             filterColumnIndex: 1,
             ui: {
-               //format: {pattern: '0'}
+               format: {pattern: '0'}
             }
+
         }
       });
 
@@ -115,52 +113,14 @@ export class ChartComponent implements OnInit {
       
   }
 
-  @Input() showMe: boolean = false;
-    
-  public col_ChartOptions = {
-        chartArea: { width: '50%' },
-        vAxis: {
-            title: 'Кількість',
-            minValue: 0,
-            textStyle: {
-                bold: true,
-                fontSize: 12,
-                color: '#4d4d4d'
-            },
-            titleTextStyle: {
-                bold: true,
-                fontSize: 18,
-                color: '#4d4d4d'
-            }
-        },
-        hAxis: {
-            title: 'Оцінки',
-            textStyle: {
-                fontSize: 14,
-                bold: true,
-                color: '#848484'
-            },
-            titleTextStyle: {
-                fontSize: 14,
-                bold: true,
-                color: '#848484'
-            }
-        },
-        seriesType: 'bars'
-    };
-
+  @Input() showMee: boolean = false;
+  
   private getChartData(){
-   this.col_ChartData = (this._gradesService.getGrades().chartData.map(x => [x.grade,x.studyform, x.count, x.assessmentYear]));
-   this.col_ChartData.unshift(['Оцінка', 'Форма', 'Кількість', 'Рік']);
+   this.col_ChartData = (this._gradesService.getGrades().map(x => [x.grade,x.studyForm, x.count, x.assessment]));
+   this.col_ChartData.unshift(['Оцінка', 'Форма', 'Кількість', 'Рік' ]);
    console.log(this);
   }
-  //   this.barChartLabels = this.GradesChartData.chartData.map( x => x.grade );
-  //   this.barChartData.push(
-  //     {
-  //       data: this.GradesChartData.chartData.map( x => x.count ), 
-  //       label: "Grades"
-  //     });
-  // }
+
   ngOnInit() {
     this.getChartData();
     google.charts.load("current", {packages:['corechart', 'controls', 'linechart']});

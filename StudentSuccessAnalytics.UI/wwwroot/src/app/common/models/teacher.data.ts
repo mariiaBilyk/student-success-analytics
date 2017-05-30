@@ -38,7 +38,7 @@ export const STREAMS: IdAndName[] =[
 ];
 
 export const SPECIALIZATIONS: Specialization[] =[
-   {id:1, name :"Програмна інженерія", firstAcademYear: 2016, semesters: 4},
+   {id:1, name :"Програмна інженерія", firstAcademYear: 2014, semesters: 4},
    {id:2, name: "Програмна архітектура", firstAcademYear: 2010, semesters: 8},
    {id:3, name: "Менеджиент", firstAcademYear: 2012, semesters: 6},
    {id:4, name: "Маркетинг", firstAcademYear: 2008, semesters:4}

@@ -1,3 +1,26 @@
-<semester-grades-filters-form (show)="showChartClicked = $event">></semester-grades-filters-form>
-<semester-grades-chart [(showMe)]="showChartClicked"></semester-grades-chart>
+<md-toolbar color="primary">
+		    <span>Успішність спеціальності</span>
+		</md-toolbar>
+<div class="main-wrapper">
+      <md-select placeholder="Інститут" [(ngModel)]="institute" name="Select institute" 
+      (ngModelChange)="getSpecializations()" class="ui fluid search selection dropdown"> 
+        <md-option *ngFor="let inst of institutes" [value]="inst.id">{{inst.name}}</md-option>
+      </md-select>
+
+      <md-select placeholder="Спеціальність" [(ngModel)]="specialization" name="Select specialization"
+      (ngModelChange)="updateSpecializationData()" class="ui fluid search selection dropdown">
+        <md-option *ngFor="let spec of specializations" [value]="spec.id">{{spec.name}}</md-option>
+      </md-select>
+
+      <md-select placeholder="Навчальний рік" [(ngModel)]="academYear" name="Select academYear" [disabled]="specialization == undefiened" class="ui fluid search selection dropdown"> 
+        <md-option *ngFor="let year of academYears" [value]="year.id">{{year.name}}</md-option>
+      </md-select>
+
+      <md-select placeholder="Семестр" [(ngModel)]="semester" name="Select semester" [disabled]="specialization == undefiened" class="ui fluid search selection dropdown"> 
+        <md-option *ngFor="let semest of semesters" [value]="semest">{{semest}}</md-option>
+      </md-select>
+
+      <button md-raised-button color="primary" (click)="showChart()" [disabled]="!specialization || !academYear || !semester">Show</button>
+</div>
+<semester-grades-chart [showMe]="show" [bar_ChartData]="data"></semester-grades-chart>
     

@@ -1,3 +1,7 @@
+<md-toolbar color="primary">
+		    <span>Прогноз успішності</span>
+		</md-toolbar>
 <budget-filters-form (show)="showChartClicked = $event">></budget-filters-form>
-<budget-chart [(showMe)]="showChartClicked"></budget-chart>
-    
+<form-filter></form-filter>
+<button class="primary-button" md-raised-button color="primary" (click)="randomize()">Filter</button>
+<budget-chart [(showMe)]="showChartClicked" [data]= "randData"></budget-chart>

@@ -10,16 +10,7 @@ import { SemesterGradesFormComponent } from './semester-grades-form.component';
 export class SemesterGradesChartComponent implements OnInit {
     @Input() showMe: boolean = true;
 
-    public bar_ChartData = [
-        ['Предмети', '5', '4', '3', 'Повторне вивчення'],
-        ['ООП', 30, 40, 35, 10],
-        ['Матан', 15, 50, 35, 10],
-        ['Англ', 50, 40, 25, 10],
-        ['Історія', 50, 30, 35, 10],
-        ['ООП', 30, 40, 35, 10],
-        ['Матан', 15, 50, 35, 10],
-        ['Англ', 50, 40, 25, 10],
-        ['Історія', 50, 30, 35, 10]];
+    @Input() bar_ChartData = [];
 
     public bar_ChartOptions = {
         chartArea: { width: '50%' },
